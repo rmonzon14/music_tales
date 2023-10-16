@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track_name: MyString
+  duration_ms: 9.99
+  tempo: 9.99
+  liveness: 9.99
+  valence: 9.99
+  instrumentalness: 9.99
+  accousticness: 9.99
+  speechiness: 9.99
+  loudness: 9.99
+  energy: 9.99
+  key: 9.99
+  danceability: 9.99
+  uri: MyString
+  album: one
+  youtube_video: one
+
+two:
+  track_name: MyString
+  duration_ms: 9.99
+  tempo: 9.99
+  liveness: 9.99
+  valence: 9.99
+  instrumentalness: 9.99
+  accousticness: 9.99
+  speechiness: 9.99
+  loudness: 9.99
+  energy: 9.99
+  key: 9.99
+  danceability: 9.99
+  uri: MyString
+  album: two
+  youtube_video: two

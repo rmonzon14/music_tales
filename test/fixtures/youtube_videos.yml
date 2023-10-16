@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  likes: 9.99
+  comments: 9.99
+  views: 9.99
+  url: MyString
+  is_licensed: MyString
+  boolean: MyString
+  stream: 1
+  is_official_video: false
+  description: MyText
+
+two:
+  title: MyString
+  likes: 9.99
+  comments: 9.99
+  views: 9.99
+  url: MyString
+  is_licensed: MyString
+  boolean: MyString
+  stream: 1
+  is_official_video: false
+  description: MyText
