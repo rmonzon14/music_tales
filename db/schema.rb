@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_16_230952) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_032859) do
   create_table "albums", force: :cascade do |t|
     t.string "name"
     t.string "type"
-    t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id"], name: "index_albums_on_album_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -72,7 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_230952) do
     t.index ["channel_id"], name: "index_youtube_videos_on_channel_id"
   end
 
-  add_foreign_key "albums", "albums"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "youtube_videos"
   add_foreign_key "youtube_videos", "channels"
