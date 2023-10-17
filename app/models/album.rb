@@ -1,3 +1,4 @@
 class Album < ApplicationRecord
-  belongs_to :album
+    belongs_to: artist
+    has_many: songs
 end
