@@ -1,3 +1,3 @@
 class YoutubeVideo < ApplicationRecord
-    belongs_to: channel
+    belongs_to :channel
 end
