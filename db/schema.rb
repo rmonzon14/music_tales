@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_053458) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_053613) do
   create_table "album_types", force: :cascade do |t|
     t.string "type"
     t.datetime "created_at", null: false
@@ -21,6 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_053458) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "album_type_id", null: false
+    t.index ["album_type_id"], name: "index_albums_on_album_type_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -75,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_053458) do
     t.index ["channel_id"], name: "index_youtube_videos_on_channel_id"
   end
 
+  add_foreign_key "albums", "album_types"
   add_foreign_key "songs", "albums"
   add_foreign_key "songs", "youtube_videos"
   add_foreign_key "youtube_videos", "channels"
