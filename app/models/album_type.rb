@@ -4,4 +4,5 @@ class AlbumType < ApplicationRecord
 
     # validations
     validates :type, presence: true
+    validates :type, uniqueness: true
 end
