@@ -4,4 +4,5 @@ class Artist < ApplicationRecord
     
     # validations
     validates :name, :url_spotify, presence: true
+    validates :name, uniqueness: true
 end
