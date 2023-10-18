@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_180742) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_184324) do
   create_table "album_types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -69,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_180742) do
     t.decimal "views"
     t.string "url"
     t.string "is_licensed"
-    t.string "boolean"
     t.integer "stream"
     t.boolean "is_official_video"
     t.text "description"
