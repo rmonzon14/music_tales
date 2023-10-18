@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Set default route to the main page 
-  root "main#index"
+  root "home#index"
 
-  
+  get '/about', to: 'static_pages#about'
 end

@@ -1,0 +1,55 @@
+<h1>About Music Tales</h1>
+<div>
+    <h2>Welcome to Music Tales</h2>
+    <p>
+        Music Tales is a website designed to provide music analysis to music enthusiasts, artists, and industry professionals. Created by Red Monzon using Ruby on Rails, Music Tales uses a provided 
+        dataset from <a href="https://www.kaggle.com/datasets/salvatorerastelli/spotify-and-youtube">Kaggle.</a>
+    </p>
+</div>
+
+<div>
+    <h3>About the Dataset</h3>
+    <p>
+        The dataset used in this project contains data of songs of various artists in the world. Each of the artists listed 
+        in the dataset will have their top ten songs associated with them. The data for each songs are based on their Spotify and YouTube analytics.
+    </p>
+
+    <p>Each song will have different variables:</p>
+    <ul>
+        <li>Track: name of the song, as visible on the Spotify platform.</li>
+        <li>Artist: name of the artist.</li>
+        <li>Url_spotify: the URL of the artist.</li>
+        <li>Album: the album in which the song is contained on Spotify.</li>
+        <li>Album_type: indicates whether the song is released as “single” or “album”</li>
+        <li>Uri: a Spotify link used to find the song through the API.</li>
+        <li>Danceability: describes how suitable the track is for dancing.</li>
+        <li>Energy: measures the intensity of the song.</li>
+        <li>Key: the key the song is in. </li>
+        <li>Loudness: the overall loudness of the song</li>
+        <li>Speechiness: the spoken words in the song. </li>
+        <li>Acousticness: measures whether the track is acoustic.</li>
+        <li>Instrumentalness: predicts whether a track contains no vocals.</li>
+        <li>Liveness: detects the presence of an audience in the recording. </li>
+        <li>Valence: describes the musical positiveness conveyed by the song.</li>
+        <li>Tempo: the overall estimated tempo of the song.</li>
+        <li>Duration_ms: the duration of the song in milliseconds (ms).</li>
+        <li>Stream: number of streams of the song on Spotify.</li>
+        <li>Url_youtube: URL of the video linked to the song on YouTube. Sets to null if there’s no URL.</li>
+        <li>Title: title of the videoclip on YouTube.</li>
+        <li>Channel: name of the channel that have published the video.</li>
+        <li>Views: number of views of the video on YouTube.</li>
+        <li>Likes: number of likes of the video on YouTube.</li>
+        <li>Comments: number of comments of the video on YouTube.</li>
+        <li>Description: description of the video on YouTube.</li>
+        <li>Licensed: indicates whether the video represents licensed content.</li>
+        <li>official_video: indicates whether the YouTube video is official or not.</li>
+    </ul>
+</div>
+
+<div>
+    <h4>The Database Schema</h4>
+   <img src="<%= asset_path('schema.png') %>" alt="Database Schema">
+</div>
+
+
+
