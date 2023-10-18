@@ -1,8 +1,8 @@
 class AlbumType < ApplicationRecord
     # associations
-    has_many :albums
+    #has_many :albums
 
     # validations
-    validates :type, presence: true
-    validates :type, uniqueness: true
+    validates :name, presence: true
+    validates :name, uniqueness: true
 end
