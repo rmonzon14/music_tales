@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'songs/controller'
+  get 'songs/index'
+  get 'songs/show'
   # Set default route to the main page 
   root "home#index"
 
