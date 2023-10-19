@@ -1,2 +1,13 @@
-<h1>Albums#index</h1>
-<p>Find me in app/views/albums/index.html.erb</p>
+<h1>Albums of Popular Artists</h1>
+
+<div>
+    <ul>
+        <% if @albums.empty? %>
+            <p>There are currently no albums available</p>
+        <% else %>
+            <% @albums.each do |album| %>
+            <li><%= link_to album.name, album %></li>
+            <% end %>
+        <% end%>
+    </ul>
+</div>

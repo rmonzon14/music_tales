@@ -4,10 +4,10 @@
     <h2>Albums</h2>
     <ul>
         <% if @artist.albums.empty? %>
-            <p>The are currently no available songs for this artist</p>
+            <p>There are currently no available albums for this artist</p>
         <% else %>
             <% @artist.albums.each do |album| %>
-                <li><%= album.name %></li>
+                <li><%= link_to album.name, album %></li>
             <% end %>
         <% end %>
     </ul>

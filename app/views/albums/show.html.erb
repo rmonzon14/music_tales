@@ -1,2 +1,14 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<h1>Songs in <%= @album.name %></h1>
+
+<div>
+    <ul>
+        <% if @album.songs.empty? %>
+            <p>There are currently no available songs for this artist</p>
+        <% else %>
+            <% @album.songs.each do |song| %>
+                <li><%= song.track_name %></li>
+            <% end %>
+        <% end %>
+    </ul>
+</div>
+

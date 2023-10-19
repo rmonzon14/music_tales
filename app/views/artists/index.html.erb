@@ -1,8 +1,9 @@
 <h1>Popular Artists</h1>
+
 <div>
     <ul>
         <% if @artists.empty? %>
-            <p>There are currently no artist available</p>
+            <p>There are currently no artists available</p>
         <% else %>
             <% @artists.each do |artist| %>
             <li><%= link_to artist.name, artist %></li>
