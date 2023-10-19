@@ -5,7 +5,7 @@
             <p>There are currently no artist available</p>
         <% else %>
             <% @artists.each do |artist| %>
-            <li><a href=""><%= artist.name %></a></li>
+            <li><%= link_to artist.name, artist %></li>
             <% end %>
         <% end%>
     </ul>

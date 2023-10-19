@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   #artists page route
   resources "artists", only: [:index, :show]
+  resources "albums", only: [:index, :show]
 end
  
