@@ -1,6 +1,5 @@
 require "csv"
 
-
 YoutubeVideo.destroy_all
 Song.destroy_all
 Album.destroy_all
@@ -19,6 +18,14 @@ filename = Rails.root.join("db/low_record_test.csv")
 csv_data = File.read(filename)
 
 mt = CSV.parse(csv_data, headers: true, encoding: "utf-8");
+
+def validate(model)
+    if model.valid?
+        model.save
+    else
+        puts model.errors.full_messages
+    end
+end
 
 mt.each do |a|
     artist = Artist.find_or_create_by(    
