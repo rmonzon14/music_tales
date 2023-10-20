@@ -1,0 +1,38 @@
+<div>
+  <p class="display-4">Albums</p>
+    <ul>
+        <% if @albums.empty? %>
+            <p>There are currently no albums available</p>
+        <% else %>
+            <% @albums.each do |album| %>
+            <li><%= link_to album.name, album %></li>
+            <% end %>
+        <% end%>
+    </ul>
+</div>
+
+<div>
+  <p class="display-4">Artists</p>
+    <ul>
+        <% if @artists.empty? %>
+            <p>There are currently no albums available</p>
+        <% else %>
+            <% @artists.each do |artist| %>
+            <li><%= link_to artist.name, artist %></li>
+            <% end %>
+        <% end%>
+    </ul>
+</div>
+
+<div>
+  <p class="display-4">Songs</p>
+    <ul>
+        <% if @songs.empty? %>
+            <p>There are currently no albums available</p>
+        <% else %>
+            <% @songs.each do |song| %>
+            <li><%= link_to song.track_name, song %></li>
+            <% end %>
+        <% end%>
+    </ul>
+</div>
