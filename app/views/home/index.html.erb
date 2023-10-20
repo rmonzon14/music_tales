@@ -5,7 +5,7 @@
             <p>There are currently no albums available</p>
         <% else %>
             <% @albums.each do |album| %>
-            <li><%= link_to album.name, album %></li>
+            <li><%= link_to album.name, album %> - <%= album.album_type.name %></li>
             <% end %>
         <% end%>
     </ul>
