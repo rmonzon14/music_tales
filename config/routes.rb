@@ -2,16 +2,18 @@ Rails.application.routes.draw do
   get 'songs/controller'
   get 'songs/index'
   get 'songs/show'
-  # Set default route to the main page 
-  root "home#index"
+  # Set default route to the main page
+  root 'home#index'
 
   # about page route
-  get "/about", to: "static_pages#about"
+  get '/about', to: 'static_pages#about'
 
   # artists page route
-  resources "artists", only: [:index, :show]
+  resources 'artists', only: %i[index show]
 
   # albums page route
-  resources "albums", only: [:index, :show]
+  resources 'albums', only: %i[index show]
+
+  # songs page route
+  resources 'songs', only: %i[index show]
 end
- 
