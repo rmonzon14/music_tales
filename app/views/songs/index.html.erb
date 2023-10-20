@@ -1,2 +1,14 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1>All Top Ten Songs by Popular Artists</h1>
+
+<div>
+    <ul>
+        <% if @songs.empty? %>
+            <p>There are currently no songs available</p>
+        <% else %>
+            <% @songs.each do |song| %>
+            <li><%= link_to song.track_name, song %></li>
+            <% end %>
+        <% end%>
+    </ul>
+</div>
+

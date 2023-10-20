@@ -2,4 +2,22 @@
 
 <div>
 
+  <h4>Song Analytics</h4>
+
+  <p><b>Track Name: </b><%= @song.track_name %></p>
+  <p><b>Duration (ms): </b><%= @song.duration_ms %></p>
+  <p><b>Tempo: </b><%= @song.tempo%></p>
+  <p><b>Liveness: </b><%= @song.liveness %></p>
+  <p><b>Valence: </b><%= @song.valence %></p>
+  <p><b>Instrumentalness: </b><%= @song.instrumentalness %></p>
+  <p><b>Acousticness: </b><%= @song.accousticness %></p>
+  <p><b>Speechiness: </b><%= @song.speechiness %></p>
+  <p><b>Loudness: </b><%= @song.loudness %></p>
+  <p><b>Energy: </b><%= @song.energy %></p>
+  <p><b>Key: </b><%= @song.key %></p>
+  <p><b>Danceability: </b><%= @song.danceability %></p>
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/<%= @song.uri %>">
+</iframe>
 </div>
