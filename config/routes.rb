@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/index'
+  get 'search/show'
   get 'songs/controller'
   get 'songs/index'
   get 'songs/show'
