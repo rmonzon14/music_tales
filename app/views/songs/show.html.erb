@@ -17,25 +17,4 @@
   <p><b>Key: </b><%= @song.key %></p>
   <p><b>Danceability: </b><%= @song.danceability %></p>
 
-  <div>
-    <p>Song Youtube Video Analytics</p>
-
-    <iframe width="420" height="315"
-      src="<%= @song.uri.sub("watch?v=", "embed/") %>">
-    </iframe>
-
-    <div>
-      <p>Youtube video information</p>
-      <p>Uploaded by: <%= @song.youtube_video.channel.name %></p>
-      <p>Title: <%= @song.youtube_video.title %></p>
-      <p>Likes: <%= @song.youtube_video.likes %></p>
-      <p>Comments: <%= @song.youtube_video.comments %></p>
-      <p>Views: <%= @song.youtube_video.views %></p>
-      <p>url: <%= @song.youtube_video.url %></p>
-      <p>stream: <%= @song.youtube_video.stream %></p>iend - Remix	254493	181.733	0.111	0.574	0	0.368	0.308	-3.529	0.64	10	0.545	https://www.youtube.com/watch?v=UQNLDwQYDDg	16	2023-10-19 04:14:29.264732	2023-10-19 04:14:29.264732
-      <p>is_official: <%= @song.youtube_video.is_official_video %></p>
-      <p>description: <%= @song.youtube_video.description %></p>
-    </div>
-  </div>
-
 </div>
