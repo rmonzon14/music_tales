@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_230952) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_020309) do
   create_table "album_types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -57,7 +57,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_230952) do
     t.integer "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "youtube_video_id"
     t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["youtube_video_id"], name: "index_songs_on_youtube_video_id"
   end
 
   create_table "youtube_videos", force: :cascade do |t|
@@ -72,15 +74,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_230952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "channel_id", null: false
-    t.integer "song_id", null: false
     t.boolean "is_licensed"
     t.index ["channel_id"], name: "index_youtube_videos_on_channel_id"
-    t.index ["song_id"], name: "index_youtube_videos_on_song_id"
   end
 
   add_foreign_key "albums", "album_types"
   add_foreign_key "albums", "artists"
   add_foreign_key "songs", "albums"
+  add_foreign_key "songs", "youtube_videos"
   add_foreign_key "youtube_videos", "channels"
-  add_foreign_key "youtube_videos", "songs"
 end

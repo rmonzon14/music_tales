@@ -5,6 +5,6 @@ class Album < ApplicationRecord
   has_many :songs
 
   # validations
-  validates :name, presence: true
-  validates :name, uniqueness: true
+  #validates :name, presence: true
+  #validates :name, uniqueness: true
 end

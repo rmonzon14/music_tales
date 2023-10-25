@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'search/index'
-  get 'search/show'
-  get 'songs/controller'
-  get 'songs/index'
-  get 'songs/show'
   # Set default route to the main page
   root 'home#index'
 
@@ -18,4 +13,7 @@ Rails.application.routes.draw do
 
   # songs page route
   resources 'songs', only: %i[index show]
+
+  # search page route
+  resources 'search', only: [:index, :show]
 end

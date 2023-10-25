@@ -1,7 +1,8 @@
 require "csv"
 
-YoutubeVideo.destroy_all
+
 Song.destroy_all
+YoutubeVideo.destroy_all
 Album.destroy_all
 Artist.destroy_all
 AlbumType.destroy_all
@@ -13,22 +14,14 @@ ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='c
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='songs';")
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='youtube_videos';")
 
-filename = Rails.root.join("db/low_record_test.csv")
+filename = Rails.root.join("db/spotify_youtube.csv")
 
 csv_data = File.read(filename)
 
 mt = CSV.parse(csv_data, headers: true, encoding: "utf-8");
 
-def validate(model)
-    if model.valid?
-        model.save
-    else
-        puts model.errors.full_messages
-    end
-end
-
 mt.each do |a|
-    artist = Artist.find_or_create_by(    
+    artist = Artist.find_or_create_by(
         name: a["Artist"],
         url_spotify: a["Url_spotify"]
     )
@@ -41,23 +34,6 @@ mt.each do |a|
         name: a["Album"],
         artist: artist,
         album_type: album_type
-    )
-
-    song = Song.find_or_create_by(
-        track_name: a["Track"],
-        duration_ms: a["Duration_ms"],
-        tempo: a["Tempo"],
-        liveness: a["Liveness"],
-        valence: a["Valence"],
-        instrumentalness: a["Instrumentalness"],
-        accousticness: a["Acousticness"],
-        speechiness: a["Speechiness"],
-        loudness: a["Loudness"],
-        energy: a["Energy"],
-        key: a["Key"],
-        danceability: a["Danceability"],
-        uri: a["Url_youtube"],
-        album: album
     )
 
     channel = Channel.find_or_create_by(
@@ -74,8 +50,25 @@ mt.each do |a|
         stream: a["Stream"],
         is_official_video: a["official_video"],
         description: a["Description"],
-        channel: channel,
-        song: song
+        channel: channel
+    )
+
+    song = Song.find_or_create_by(
+        track_name: a["Track"],
+        duration_ms: a["Duration_ms"],
+        tempo: a["Tempo"],
+        liveness: a["Liveness"],
+        valence: a["Valence"],
+        instrumentalness: a["Instrumentalness"],
+        accousticness: a["Acousticness"],
+        speechiness: a["Speechiness"],
+        loudness: a["Loudness"],
+        energy: a["Energy"],
+        key: a["Key"],
+        danceability: a["Danceability"],
+        uri: a["Url_youtube"],
+        album: album,
+        youtube_video: youtube_video
     )
 end
 
