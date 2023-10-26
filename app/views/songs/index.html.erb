@@ -1,6 +1,7 @@
 <h1>All Top Ten Songs by Popular Artists</h1>
 
 <div>
+    <%= paginate @songs, views: { paginator: 'kaminari/paginator' } %>
     <ul>
         <% if @songs.empty? %>
             <p>There are currently no songs available</p>
